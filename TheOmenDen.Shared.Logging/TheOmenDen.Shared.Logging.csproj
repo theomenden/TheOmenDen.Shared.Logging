@@ -9,9 +9,8 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Authors>Andrew Beers (Alu)</Authors>
 		<Company>The Omen Den L.L.C.</Company>
-		<Description>
-			A collection of logging utilities that are used throughout The Omen Den's applications.
-			Also provides an eventtype enricher for Serilog
+		<Description>A collection of logging utilities that are used throughout The Omen Den's applications.
+Also provides an eventtype enricher for Serilog
 		</Description>
 		<Copyright>2022</Copyright>
 		<PackageIcon>omen-den-jsonapi.png</PackageIcon>
@@ -19,6 +18,10 @@
 		<PackageReleaseNotes>Split off from the main TheOmenDen.Shared package</PackageReleaseNotes>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/theomenden/TheOmenDen.Shared.Logging</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/theomenden/TheOmenDen.Shared.Logging</PackageProjectUrl>
+		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -30,6 +33,11 @@
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
+		<Content Include="..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 	<ItemGroup>
