@@ -2,11 +2,11 @@
 
 ## This library contains a basic logging implementation and some simple extensions that can be used in addition to your normal logging providers.
 
-_Note: this library depends on [The Omen Den Shared Library](https://github.com/theomenden/TheOmenDen.Shared)_. 
+- _1st note: this library depends on [The Omen Den Shared Library](https://github.com/theomenden/TheOmenDen.Shared)_. 
 
-_2<sup>nd</sup> note, this library is not affiliated with the fine folks at Serilog, however it does define an enricher and extensions for Serilog consumers. Credit to [Serilog](https://github.com/serilog/serilog)_
+- _2nd note, this library is not affiliated with the fine folks at Serilog, however it does define an enricher and extensions for Serilog consumers. Credit to [Serilog](https://github.com/serilog/serilog)_
 
-_3<sup>rd</sup> note, this library makes use of MurmurHash which can be found here: [MurmurHash](https://github.com/jitbit/MurmurHash.net)
+- _3rd note, this library makes use of MurmurHash which can be found here: [MurmurHash](https://github.com/jitbit/MurmurHash.net)_
 ## We hope to accomplish the following things within the library, and will continue to provide maintainence and a plan for future improvements.
 
 ## 1. `Templates`
