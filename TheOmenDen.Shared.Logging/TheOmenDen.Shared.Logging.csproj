@@ -1,33 +1,44 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <ApplicationIcon>omenden-jsonapi.ico</ApplicationIcon>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Authors>Andrew Beers (Alu)</Authors>
-    <Company>The Omen Den L.L.C.</Company>
-    <Description>A collection of logging utilities that are used throughout The Omen Den's applications.
-Also provides an eventtype enricher for Serilog</Description>
-    <Copyright>2022</Copyright>
-    <PackageIcon>omen-den-jsonapi.png</PackageIcon>
-    <PackageTags>logging, csharp, dotnet, dotnetcore, extensions, templates</PackageTags>
-    <PackageReleaseNotes>Split off from the main TheOmenDen.Shared package</PackageReleaseNotes>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateNuspecDependsOn>$(GenerateNuspecDependsOn);SetPackageVersion</GenerateNuspecDependsOn>
+		<ApplicationIcon>omenden-jsonapi.ico</ApplicationIcon>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Authors>Andrew Beers (Alu)</Authors>
+		<Company>The Omen Den L.L.C.</Company>
+		<Description>A collection of logging utilities that are used throughout The Omen Den's applications.
+Also provides an eventtype enricher for Serilog
+		</Description>
+		<Copyright>2022</Copyright>
+		<PackageIcon>omen-den-jsonapi.png</PackageIcon>
+		<PackageTags>logging, csharp, dotnet, dotnetcore, extensions, templates</PackageTags>
+		<PackageReleaseNotes>Split off from the main TheOmenDen.Shared package</PackageReleaseNotes>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/theomenden/TheOmenDen.Shared.Logging</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/theomenden/TheOmenDen.Shared.Logging</PackageProjectUrl>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Content Include="omenden-jsonapi.ico" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="omenden-jsonapi.ico" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\..\TheOmenDen.Shared.Interfaces\omen-den-jsonapi.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\TheOmenDen.Shared.Interfaces\omen-den-jsonapi.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<Content Include="..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
