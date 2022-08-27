@@ -18,31 +18,31 @@ public static class LoggerExtensions
     {
         BeforeValidatingMessageTrace = LoggerMessage.Define(
             LogLevel.Debug,
-            new EventId(TraceEventIdentifiers.BeforeValidatingMessageTrace.Id, nameof(TraceBeforeValidatingMessage)),
+            new EventId(TraceEventIdentifiers.BeforeValidatingMessageTrace.Value, nameof(TraceBeforeValidatingMessage)),
             PipelineBehaviour + " Validating Message"
         );
 
         ProfileMessageTrace = LoggerMessage.Define<long>(
             LogLevel.Information,
-            new EventId(TraceEventIdentifiers.ProfileMessagingTrace.Id, nameof(TraceMessageProfiling)),
+            new EventId(TraceEventIdentifiers.ProfileMessagingTrace.Value, nameof(TraceMessageProfiling)),
             PipelineBehaviour + " Request took {milliseconds} milliseconds"
         );
 
         InvalidMessageTrace = LoggerMessage.Define<string, string>(
             LogLevel.Debug,
-            new EventId(TraceEventIdentifiers.InvalidMessageTrace.Id, nameof(TraceMessageValidationFailed)),
+            new EventId(TraceEventIdentifiers.InvalidMessageTrace.Value, nameof(TraceMessageValidationFailed)),
             PipelineBehaviour + " Invalid Message. {message}. User: {user}"
         );
 
         ModelBinderUsed = LoggerMessage.Define<string, string, string>(
             LogLevel.Debug,
-            new EventId(TraceEventIdentifiers.ModelBinderUsedTrace.Id, nameof(TraceMessageModelBinderUsed)),
+            new EventId(TraceEventIdentifiers.ModelBinderUsedTrace.Value, nameof(TraceMessageModelBinderUsed)),
             "Parameter {modelName} of type {type} bound using ModelBinder \"{modelBinder}\""
         );
 
         ValidMessageTrace = LoggerMessage.Define(
             LogLevel.Debug,
-            new EventId(TraceEventIdentifiers.ValidMessageTrace.Id, nameof(TraceMessageValidationPassed)),
+            new EventId(TraceEventIdentifiers.ValidMessageTrace.Value, nameof(TraceMessageValidationPassed)),
             PipelineBehaviour + " Message is valid"
         );
     }
