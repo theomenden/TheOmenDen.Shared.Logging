@@ -5,7 +5,7 @@
 /// </summary>
 public static class Logging
 {
-    public sealed class LogContexts
+    public sealed record LogContexts
     {
         /// <summary>
         /// The type of request that was issued
