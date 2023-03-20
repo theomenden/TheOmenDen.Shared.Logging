@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
 	<PropertyGroup>
 		<TargetFrameworks>net6.0;net7.0</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -11,7 +10,7 @@
 		<Description>A collection of logging utilities that are used throughout The Omen Den's applications.
 Also provides an eventtype enricher for Serilog
 		</Description>
-		<Copyright>2022</Copyright>
+		<Copyright>2023</Copyright>
 		<PackageIcon>omen-den-jsonapi.png</PackageIcon>
 		<PackageTags>logging;csharp;dotnet;dotnetcore;extensions;templates</PackageTags>
 		<PackageReleaseNotes>Updating underlying dependencies for Serilog.AspNetCore and TheOmenDen.Shared main library</PackageReleaseNotes>
@@ -48,7 +47,7 @@ Also provides an eventtype enricher for Serilog
 		<PropertyGroup>
 			<PackageVersion>$([System.DateTime]::Now.ToString("2.MM.dd.HHss"))</PackageVersion>
 			<AssemblyVersion>$([System.DateTime]::Now.ToString("2.MM.dd.HHss"))</AssemblyVersion>
-			<FileVersion>$([System.DateTime]::Now.ToString("1.MM.dd.HHss"))</FileVersion>
+			<FileVersion>$([System.DateTime]::Now.ToString("2.MM.dd.HHss"))</FileVersion>
 		</PropertyGroup>
 	</Target>
 </Project>

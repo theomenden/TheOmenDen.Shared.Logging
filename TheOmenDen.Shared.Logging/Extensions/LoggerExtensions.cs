@@ -9,31 +9,31 @@ public static class LoggerExtensions
     private static readonly Action<ILogger, Exception?> BeforeValidatingMessageTrace = LoggerMessage.Define(
         LogLevel.Debug,
         new EventId(TraceEventIdentifiers.BeforeValidatingMessageTrace.Value, nameof(TraceBeforeValidatingMessage)),
-        PipelineBehaviour + " Validating Message"
+        PipelineBehaviour + " Validating Message."
     );
 
     private static readonly Action<ILogger, string, string, Exception?> InvalidMessageTrace = LoggerMessage.Define<string, string>(
         LogLevel.Debug,
         new EventId(TraceEventIdentifiers.InvalidMessageTrace.Value, nameof(TraceMessageValidationFailed)),
-        PipelineBehaviour + " Invalid Message. {message}. User: {user}"
+        PipelineBehaviour + " Invalid Message. {message}. User: {user}."
     );
 
     private static readonly Action<ILogger, string, string, string, Exception?> ModelBinderUsed = LoggerMessage.Define<string, string, string>(
         LogLevel.Debug,
         new EventId(TraceEventIdentifiers.ModelBinderUsedTrace.Value, nameof(TraceMessageModelBinderUsed)),
-        "Parameter {modelName} of type {type} bound using ModelBinder \"{modelBinder}\""
+        "Parameter {modelName} of type {type} bound using ModelBinder \"{modelBinder}\"."
     );
 
     private static readonly Action<ILogger, long, Exception?> ProfileMessageTrace = LoggerMessage.Define<long>(
         LogLevel.Information,
         new EventId(TraceEventIdentifiers.ProfileMessagingTrace.Value, nameof(TraceMessageProfiling)),
-        PipelineBehaviour + " Request took {milliseconds} milliseconds"
+        PipelineBehaviour + " Request took {milliseconds} milliseconds."
     );
 
     private static readonly Action<ILogger, Exception?> ValidMessageTrace = LoggerMessage.Define(
     LogLevel.Debug,
     new EventId(TraceEventIdentifiers.ValidMessageTrace.Value, nameof(TraceMessageValidationPassed)),
-    PipelineBehaviour + " Message is valid"
+    PipelineBehaviour + " Message is valid."
     );
 
     private const string PipelineBehaviour = "Pipeline Behaviour: ";
