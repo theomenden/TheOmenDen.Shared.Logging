@@ -41,3 +41,21 @@
     - Allows for the `Serilog.IDiagnosticContext` to log out properties from a provided `Microsoft.AspNetCire.Http.HttpContext`
 - `EnvironmentLoggerConfigurationExtensions` 
   - Allows for registering the `EventTypeEnricher` using the `Enrich().WithEventType()` syntax in your Serilog logger configuration.
+## 4. Http Message Logging
+- `MetaData`
+  - A simple structure meant to provide basic metadata information for Http Request and Responses.
+  - Provides a way to see the information logged in a more structured form.
+- `DelegatingLogHandler`
+  - A `DelegatingHandler` implementation that allows for logging of specific properties in an `HttpMessage`.
+  - Comes with a set of of extensions in `HttpMessageHandlerRegistrationExtensions.cs` to allow you to register the handler itself as a `Transient` service, then onto HttpClients. 
+    - Can also be configured to register on _ALL_ clients defined in the same service collection.
+## 5. Options
+- `ApiExceptionOptions` and `OptionsDelegates`
+  - A simple container for actions that allow for log level adjustments and exception detail customizations
+  - These can be configured within middleware in your .NET applications.
+    - `AddResponseDetails`
+      - Allows one to define how specific exceptions are logged out to a Payload's message.
+      - Meant to be used in conjunction with `OptionsDelegates.UpdateApiErrorResponse`
+    - `DetermineLogLevel`
+      - A way to determine how certain exceptions are reported in the logs
+      - Meant to be combined with `OptionsDelegates.DetermineLogLevel` - which allows for certain exceptions to be reported with a `LogLevel.Critical` instead of `LogLevel.Error`

@@ -1,6 +1,7 @@
 ﻿using Serilog.Configuration;
+using TheOmenDen.Shared.Logging.Serilog;
 
-namespace TheOmenDen.Shared.Logging.Serilog;
+namespace TheOmenDen.Shared.Logging.Extensions;
 /// <summary>
 /// Adds the <c>WithEventType()</c> extension method to <see cref="LoggerConfiguration"/> 
 /// </summary>
