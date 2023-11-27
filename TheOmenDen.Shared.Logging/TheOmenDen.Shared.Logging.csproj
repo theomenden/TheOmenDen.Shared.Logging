@@ -41,7 +41,7 @@ Also provides an eventtype enricher for Serilog
     <PackageReference Include="murmurhash" Version="1.0.3" />
     <PackageReference Include="Serilog" Version="2.12.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
-    <PackageReference Include="TheOmenDen.Shared" Version="2023.3.25.112" />
+    <PackageReference Include="TheOmenDen.Shared" Version="2023.11.27.49" />
   </ItemGroup>
 
 	<Target Name="SetPackageVersion" DependsOnTargets="Build">
