@@ -7,7 +7,7 @@ namespace TheOmenDen.Shared.Logging.Http;
 /// Provides a way to log <see cref="MetaData"/> from a <seealso cref="HttpRequestMessage"/> and <seealso cref="HttpResponseMessage"/>
 /// </summary>
 /// <remarks></remarks>
-internal sealed class DelegatingLogHandler: DelegatingHandler
+internal sealed class DelegatingLogHandler : DelegatingHandler
 {
     private readonly ILogger<DelegatingLogHandler> _logger;
     public DelegatingLogHandler(ILogger<DelegatingLogHandler> logger)
@@ -24,25 +24,21 @@ internal sealed class DelegatingLogHandler: DelegatingHandler
         return response;
     }
 
-    private static LogLevel DetermineLogLevel(HttpStatusCode statusCode)
-    {
-        return (int)statusCode switch
+    private static LogLevel DetermineLogLevel(HttpStatusCode statusCode) =>
+        (int)statusCode switch
         {
             >= 500 => LogLevel.Critical,
             >= 400 => LogLevel.Error,
             _ => LogLevel.Information
         };
-    }
 
-    private static MetaData BuildRequestMetaData(HttpRequestMessage request)
-    {
-        return new()
+    private static MetaData BuildRequestMetaData(HttpRequestMessage request) =>
+        new()
         {
             RequestMethod = request.Method.Method,
             RequestTimestamp = DateTime.UtcNow,
             RequestUri = request.RequestUri?.ToString() ?? String.Empty,
         };
-    }
 
     private static MetaData BuildResponseMetaData(MetaData logMetaData, HttpResponseMessage response)
     {
@@ -55,7 +51,7 @@ internal sealed class DelegatingLogHandler: DelegatingHandler
     private Task SendToLoggerAsync(MetaData logMetaData)
     {
         var logLevel = DetermineLogLevel(logMetaData.ResponseStatusCode);
-        _logger.Log(logLevel, EventIDs.EventIdHttpClient, "HttpContext Provided Metadata {@MetaData}",logMetaData);
+        _logger.Log(logLevel, EventIDs.EventIdHttpClient, "HttpContext Provided Metadata {@MetaData}", logMetaData);
         return Task.CompletedTask;
     }
 }

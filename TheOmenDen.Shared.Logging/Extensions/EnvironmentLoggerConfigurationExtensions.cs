@@ -11,7 +11,7 @@ public static class EnvironmentLoggerConfigurationExtensions
     /// Adds an <see cref="EventTypeEnricher"/> to the <seealso cref="LoggerConfiguration"/>.
     /// This allows for various template messages based off of provided <see cref="EventIdIdentifier"/> to be logged out. 
     /// </summary>
-    /// <param name="enrichmentConfiguration"></param>
+    /// <param name="enrichmentConfiguration" />
     /// <returns><see cref="LoggerConfiguration"/> for further configuration options to be added</returns>
     /// <exception cref="ArgumentNullException">Thrown when the provided <paramref name="enrichmentConfiguration"/> is not found</exception>
     public static LoggerConfiguration WithEventType(this LoggerEnrichmentConfiguration enrichmentConfiguration) =>

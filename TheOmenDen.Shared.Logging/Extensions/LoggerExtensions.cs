@@ -44,10 +44,7 @@ public static class LoggerExtensions
     /// </summary>
     /// <param name="logger"><inheritdoc cref="ILogger"/></param>
     /// <param name="milliseconds">The total elapsed milliseconds an operation took</param>
-    public static void TraceMessageProfiling(this ILogger logger, long milliseconds)
-    {
-        ProfileMessageTrace(logger, milliseconds, null);
-    }
+    public static void TraceMessageProfiling(this ILogger logger, long milliseconds) => ProfileMessageTrace(logger, milliseconds, null);
 
     /// <summary>
     /// Logs out a message indicating when a validation failure occurs in process

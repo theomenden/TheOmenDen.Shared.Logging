@@ -14,11 +14,11 @@ public static class OptionsDelegates
     private const string ANetworkRelatedMessage = "a network-related";
 
     /// <summary>
-    /// 
     /// </summary>
     /// <param name="context"></param>
     /// <param name="exception"></param>
     /// <param name="operationOutcome"></param>
+    /// <exception cref="ArgumentException"><paramref name="comparisonType" /> is not a <see cref="StringComparison" /> value.</exception>
     public static void UpdateApiErrorResponse(HttpContext context, Exception exception,
         OperationOutcome operationOutcome)
     {
@@ -28,11 +28,13 @@ public static class OptionsDelegates
         {
             operationOutcome.ClientErrorPayload.Message += DatabaseExceptionMessage;
         }
-        
 
         operationOutcome.ClientErrorPayload.Detail += $"{context.Connection.LocalIpAddress}{Environment.NewLine}Trace Identifier: {context.TraceIdentifier}";
     }
 
+    /// <summary>Allows you to determine log levels for <see cref="Exception"/></summary>
+    /// <exception cref="ArgumentNullException"><paramref name="value" /> is <see langword="null" />.</exception>
+    /// <exception cref="ArgumentException"><paramref name="comparisonType" /> is not a <see cref="StringComparison" /> value.</exception>
     public static LogLevel DetermineLogLevel(Exception exception) =>
     exception.Message.StartsWith(CannotOpenDatabaseMessage, StringComparison.OrdinalIgnoreCase)
     || exception.Message.StartsWith(ANetworkRelatedMessage, StringComparison.OrdinalIgnoreCase)

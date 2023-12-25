@@ -12,6 +12,8 @@ public class EventTypeEnricher : ILogEventEnricher
     /// </summary>
     /// <param name="logEvent"></param>
     /// <param name="propertyFactory"></param>
+    /// <exception cref="ArgumentNullException"><paramref name="buffer" /> is <see langword="null" />.</exception>
+    /// <exception cref="ArgumentException"><paramref name="startIndex" /> is greater than or equal to the length of <paramref name="value" /> minus 3, and is less than or equal to the length of <paramref name="value" /> minus 1.</exception>
     public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
     {
         var murmur = MurmurHash.Create32();
@@ -27,4 +29,3 @@ public class EventTypeEnricher : ILogEventEnricher
         logEvent.AddPropertyIfAbsent(eventId);
     }
 }
-
